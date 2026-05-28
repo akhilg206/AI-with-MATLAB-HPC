@@ -26,7 +26,7 @@ mask = niftiread(fullfile(mriDataFolder,"sub-pixar001","sub-pixar001_analysis_ma
 vol = int16(vol) .* int16(mask); % Apply skull-stripping
 %[text] Skull-stripping the volume reveals the outer surface of the brain's cortical surface. This can be visualized using `volshow`: 
 numSlices = size(vol,3);
-volshow(vol(:,:,1:round(numSlices/2))); %[output:140bbb10]
+volshow(vol(:,:,1:round(numSlices/2)));
 %%
 %[text] %[text:anchor:H_6148] ### Read Participant Data
 %[text] **Read Tabular Data**
@@ -84,7 +84,8 @@ figure; %[output:65e96eda]
 bar(categories(mriImgds.Labels), countcats(mriImgds.Labels)); %[output:65e96eda]
 ylabel('Number of Images'); %[output:65e96eda]
 title('Distribution of Age Classes in MRI Dataset'); %[output:65e96eda]
-%[text] 
+%%
+addpath("image-classifier-app")
 %[text] *Copyright 2020-2021 The MathWorks, Inc.*
 
 %[appendix]{"version":"1.0"}
@@ -100,9 +101,6 @@ title('Distribution of Age Classes in MRI Dataset'); %[output:65e96eda]
 %---
 %[control:checkbox:6233]
 %   data: {"defaultValue":true,"label":"applyAugmentation","run":"Nothing"}
-%---
-%[output:140bbb10]
-%   data: {"dataType":"image","outputData":{"dataUri":"data:,","height":840,"width":1120}}
 %---
 %[output:32a32983]
 %   data: {"dataType":"text","outputData":{"text":"     <strong>participant_id<\/strong>      <strong>Age<\/strong>      <strong>AgeGroup<\/strong>    <strong>Child_Adult<\/strong>    <strong>Gender<\/strong>    <strong>Handedness<\/strong>    <strong>ToM Booklet-Matched<\/strong>    <strong>ToM Booklet-Matched-NOFB<\/strong>    <strong>FB_Composite<\/strong>    <strong>FB_Group<\/strong>    <strong>WPPSI BD raw<\/strong>    <strong>WPPSI BD scaled<\/strong>    <strong>KBIT_raw<\/strong>    <strong>KBIT_standard<\/strong>    <strong>DCCS Summary<\/strong>    <strong>Scanlog: Scanner<\/strong>    <strong>Scanlog: Coil<\/strong>     <strong>Scanlog: Voxel slize<\/strong>    <strong>Scanlog: Slice Gap<\/strong>\n    <strong>________________<\/strong>    <strong>______<\/strong>    <strong>________<\/strong>    <strong>___________<\/strong>    <strong>______<\/strong>    <strong>__________<\/strong>    <strong>___________________<\/strong>    <strong>________________________<\/strong>    <strong>____________<\/strong>    <strong>________<\/strong>    <strong>____________<\/strong>    <strong>_______________<\/strong>    <strong>________<\/strong>    <strong>_____________<\/strong>    <strong>____________<\/strong>    <strong>________________<\/strong>    <strong>______________<\/strong>    <strong>____________________<\/strong>    <strong>__________________<\/strong>\n\n    {'sub-pixar001'}    4.7748    {'4yo'}      {'child'}     {'M'}       {'R'}                 0.8                  0.73684                  6          {'pass'}       {'22'}           {'13'}           NaN            NaN            {'3'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.1        \n    {'sub-pixar002'}    4.8569    {'4yo'}      {'child'}     {'F'}       {'R'}                0.72                  0.73684                  4          {'inc' }       {'18'}           {'9' }           NaN            NaN            {'2'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.1        \n    {'sub-pixar003'}    4.1533    {'4yo'}      {'child'}     {'F'}       {'R'}                0.44                  0.42105                  3          {'inc' }       {'15'}           {'9' }           NaN            NaN            {'3'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.1        \n    {'sub-pixar004'}    4.4736    {'4yo'}      {'child'}     {'F'}       {'R'}                0.64                  0.73684                  2          {'fail'}       {'17'}           {'10'}           NaN            NaN            {'3'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.2        \n    {'sub-pixar005'}    4.8378    {'4yo'}      {'child'}     {'F'}       {'R'}                 0.6                  0.57895                  4          {'inc' }       {'13'}           {'5' }           NaN            NaN            {'2'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.2        \n    {'sub-pixar006'}    3.6057    {'3yo'}      {'child'}     {'F'}       {'R'}                0.52                  0.52632                  3          {'inc' }       {'9' }           {'6' }           NaN            NaN            {'2'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.2        \n    {'sub-pixar007'}    4.2491    {'4yo'}      {'child'}     {'M'}       {'R'}             0.45455                      0.5                  2          {'fail'}       {'8' }           {'3' }           NaN            NaN            {'1'}            {'3T2'}         {'7-8yo 32ch'}        {'3mm iso'}                0.2        \n    {'sub-pixar008'}    3.5291    {'3yo'}      {'child'}     {'F'}       {'R'}               0.625                  0.61111                  4          {'inc' }       {'16'}           {'11'}           NaN            NaN            {'3'}            {'3T1'}         {'7-8yo 32ch'}        {'3mm iso'}                0.1        \n\n","truncated":false}}

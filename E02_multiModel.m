@@ -6,15 +6,15 @@
 %[text] 3. Participants Aged 18 or older, classified as Adults \
 %[text]  ![](text:image:5a14)
 %%
-%[text] %[text:anchor:H_0779] ### 
+%[text] %[text:anchor:H_0779] ### Load data & prepare the network
 clear
 
-net_1 = imagePretrainedNetwork("resnet18", "NumClasses",3);
-
 mriImgds = imageDatastore("2DImageSet_28May2026_064146",'IncludeSubfolders',true,'LabelSource','foldernames','FileExtensions','.png');
-[trainImgs,testImgs, valImgs] = splitEachLabel(mriImgds,0.8, .1,'randomized');
 %[text] ### 
+net_1 = imagePretrainedNetwork("resnet18", "NumClasses",3);
 imageSize = net_1.Layers(1).InputSize(1:2);
+
+[trainImgs,testImgs, valImgs] = splitEachLabel(mriImgds,0.8, .1,'randomized');
 
 imageAugmenter      = imageDataAugmenter('RandRotation',[-30,30]);
 
