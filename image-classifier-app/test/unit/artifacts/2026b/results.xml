@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" name="tModel" skipped="0" tests="16" time="47.9492">
+    <testcase classname="tModel" name="canSetDataFromFilePath" time="1.8512"/>
+    <testcase classname="tModel" name="canSetDataFromWorkspace" time="0.4724"/>
+    <testcase classname="tModel" name="summarizesData" time="0.47819"/>
+    <testcase classname="tModel" name="setsValidationFraction" time="0.39757"/>
+    <testcase classname="tModel" name="previewsData" time="0.87565"/>
+    <testcase classname="tModel" name="setsNetworkFromPretrainedNetName" time="5.9918"/>
+    <testcase classname="tModel" name="validatesNetworkFromWorkspace" time="4.528"/>
+    <testcase classname="tModel" name="usesNetworkFromWorkspace" time="0.96704"/>
+    <testcase classname="tModel" name="canSetTrainingOptions" time="0.58078"/>
+    <testcase classname="tModel" name="trainsNetworK" time="12.0053"/>
+    <testcase classname="tModel" name="predictsOnImage" time="4.3273"/>
+    <testcase classname="tModel" name="predictsOnIndex" time="2.5056"/>
+    <testcase classname="tModel" name="computesConfusionMatrix" time="2.4678"/>
+    <testcase classname="tModel" name="computesInterpretabilityMap" time="5.3344"/>
+    <testcase classname="tModel" name="createsStructForExport" time="3.1909"/>
+    <testcase classname="tModel" name="generatesTrainingCode" time="1.9752"/>
+  </testsuite>
+  <testsuite errors="0" failures="0" name="tVariablePickerDialogInTestingMode" skipped="0" tests="4" time="4.0262">
+    <testcase classname="tVariablePickerDialogInTestingMode" name="testSelectDlnetworkVariableInTestingMode" time="2.2022"/>
+    <testcase classname="tVariablePickerDialogInTestingMode" name="testSelectImageDatastoreInTestingMode" time="0.55221"/>
+    <testcase classname="tVariablePickerDialogInTestingMode" name="testNoSuitableVariablesInTestingMode" time="0.69239"/>
+    <testcase classname="tVariablePickerDialogInTestingMode" name="testFirstItemIsReturnedInTestingMode" time="0.57943"/>
+  </testsuite>
+</testsuites>
